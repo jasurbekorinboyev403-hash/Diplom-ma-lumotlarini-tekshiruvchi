@@ -18,6 +18,7 @@ Bu loyiha talaba diplomlari, sertifikatlari va onlayn kurs natijalarini blockcha
 - `React + Vite`
 - `ethers.js`
 - `MetaMask`
+- `GitHub Actions`
 
 ## Local run
 
@@ -59,6 +60,13 @@ Brauzerda:
 http://localhost:5173
 ```
 
+## VS Code orqali run qilish
+
+1. `npm install` ni bir marta ishlating
+2. VS Code ichida `F5` bosing
+3. `Launch Chrome against localhost` ni tanlang
+4. VS Code dev serverni ishga tushiradi va brauzerni ochadi
+
 ## MetaMask sozlash
 
 - `Localhost 8545` tarmog'ini qo'shing
@@ -88,6 +96,7 @@ Frontend uchun bepul platformalar:
 - `Vercel`
 - `Netlify`
 - `Cloudflare Pages`
+- `GitHub Pages`
 
 Build command:
 
@@ -101,7 +110,28 @@ Output folder:
 dist
 ```
 
-Deploy oqimi:
+## GitHub Pages deploy
+
+Repository ichiga GitHub Actions workflow qo'shilgan:
+
+- `.github/workflows/deploy-pages.yml`
+- `vite.config.js`
+
+Ishlatish uchun:
+
+1. GitHub repository `Settings > Pages` bo'limiga kiring
+2. `Source` sifatida `GitHub Actions` ni tanlang
+3. `Settings > Secrets and variables > Actions > Variables` ga kiring
+4. `VITE_CONTRACT_ADDRESS` nomli variable yarating
+5. `main` branchga push qiling
+
+GitHub Pages URL odatda:
+
+```text
+https://jasurbekorinboyev403-hash.github.io/Diplom-ma-lumotlarini-tekshiruvchi/
+```
+
+## Vercel yoki Netlify deploy
 
 1. Loyihani GitHub'ga push qiling
 2. Vercel yoki Netlify'da repo'ni ulang
@@ -123,7 +153,7 @@ git push -u origin main
 
 1. MetaMask'ni ulang
 2. Diplom yoki sertifikat ma'lumotini kiriting
-3. `Blockchain’da yaratish` tugmasini bosing
+3. `Blockchain'da yaratish` tugmasini bosing
 4. Chiqqan hash orqali yozuvni keyin tekshiring
 5. Talaba yozuvlarini qidiring
 6. Kerak bo'lsa boshqa wallet manziliga yozuvni ulashing
